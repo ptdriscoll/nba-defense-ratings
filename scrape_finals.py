@@ -52,7 +52,7 @@ print ''
 print len(years), len(winners), len(losers), len(games)
 print ''
 
-with open('finals.csv', 'w') as file:
+with open('data/finals.csv', 'w') as file:
     csv = 'years,winners,losers,games\n'
     for x in range(len(years)):
         csv += years[x] + ',' + winners[x] + ',' + losers[x] +  ',' + games[x] + '\n' 

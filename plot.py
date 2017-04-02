@@ -16,7 +16,7 @@ import matplotlib.lines as mlines
 run ttest 
 '''
 
-df = pd.read_csv('ratings.csv')
+df = pd.read_csv('data/ratings.csv')
 print df
 
 #check averages and statistical significance

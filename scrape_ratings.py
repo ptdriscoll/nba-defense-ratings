@@ -19,7 +19,7 @@ url = 'http://stats.nba.com/stats/leaguedashteamstats?Conference=&DateFrom=&Date
 headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36','Upgrade-Insecure-Requests': '1','x-runtime': '148ms'}
 
 #get NBA finals winners and losers    
-df = pd.read_csv('finals.csv')
+df = pd.read_csv('data/finals.csv')
 print '\n', df.head() 
 
 #empty lists to store winner and loser defense ratings
@@ -89,7 +89,7 @@ df['ratings_winners'] = se_ratings_winners.values
 df['ratings_losers'] = se_ratings_losers.values
 
 print '\n',df
-df.to_csv('ratings.csv', index=False, encoding='utf-8')
+df.to_csv('data/ratings.csv', index=False, encoding='utf-8')
 
 
 
