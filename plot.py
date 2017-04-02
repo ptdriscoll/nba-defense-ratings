@@ -3,6 +3,12 @@
 Created on Tue Mar 28 18:51:58 2017
 
 @author: pdriscoll
+
+NOTES: 
+--All files, including two csv files and two Python scripts used to scrape the data, can be found at:
+  https://github.com/ptdriscoll/nba-defense-ratings 
+--All Python files for this application are written in Python 2.7  
+
 """
 
 import pandas as pd
@@ -183,7 +189,7 @@ print results
 '''
 
 plt.tight_layout()
-plt.savefig('nba_defense.jpg', dpi=72,
+plt.savefig('nba_defense.jpg', dpi=55,
             bbox_inches='tight', bbox_extra_artist=[title]) 
 plt.show()
 
