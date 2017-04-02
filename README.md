@@ -1,6 +1,6 @@
 # Does defense win NBA championships?
 
-![Defense Ratings for Winning and Losing Teams in NBA Finals](nba_defense.jpg?raw=true)
+![Defense Ratings for Winning and Losing Teams in NBA Finals](nba_defense.jpg)
 
 You may have heard the old cliché that defense wins basketball championships. Superstars like Michael Jordan, who led the Chicago Bulls to six NBA championships, said so. And coaches like Gregg Popovich, who led the San Antonio Spurs to five championships, often emphasize defense.   
 
@@ -15,7 +15,7 @@ Sources:
 - https://en.wikipedia.org/wiki/List_of_NBA_champions
 - http://stats.nba.com/teams/defense/#!?sort=W&dir=-1&Season=2015-16&SeasonType=Playoffs&LastNGames=7
 
-### Running the Code
+### Running the code
 
 The visualization can be run with plot.py, as long as ratings.csv is in the folder. To recreate ratings.csv and then run the visualization, run these files in this order:
 
