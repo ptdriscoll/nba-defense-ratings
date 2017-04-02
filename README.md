@@ -1,5 +1,7 @@
 # Does defense win NBA championships?
 
+<br>
+
 ![Defense Ratings for Winning and Losing Teams in NBA Finals](nba_defense.jpg)
 
 You may have heard the cliché that defense wins basketball championships. Superstars like Michael Jordan, who led the Chicago Bulls to six NBA championships, said so. And coaches like Gregg Popovich, who led the San Antonio Spurs to five championships, often emphasize defense.   
