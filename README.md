@@ -22,5 +22,5 @@ Sources:
 The visualization can be run with plot.py, as long as ratings.csv is in the data folder. To recreate ratings.csv and then run the visualization, run these files in this order:
 
 1. scrape_finals.py - this grabs winners, losers and number of games played in last 20 NBA Finals
-2. scrape_ratings.py - this retrieves NBA defense ratings for each team compiled by scrape_finals.py
-3. plot.py - this will plot winners and losers rankings overall and in a year timeline
+2. scrape_ratings.py - this retrieves NBA defense ratings for each team in last 20 Finals Series
+3. plot.py - this plots winners and losers rankings overall and in a yearly timeline
