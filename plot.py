@@ -19,10 +19,27 @@ import matplotlib.lines as mlines
 
 
 '''
+set whether to plot defense or offense ratings
+'''
+get_offense_instead = False
+
+open_file = 'data/ratings.csv'
+title_text = 'Defense Ratings for Winning and Losing Teams in NBA Finals'
+ylabel_text = 'Defense Ratings'
+save_as_image = 'nba_defense.jpg'
+
+if get_offense_instead:
+    open_file = 'data/ratings-offense.csv'
+    title_text = 'Offense Ratings for Winning and Losing Teams in NBA Finals'
+    ylabel_text = 'Offense Ratings'
+    save_as_image = 'nba_offense.jpg'
+
+
+'''
 run ttest 
 '''
 
-df = pd.read_csv('data/ratings.csv')
+df = pd.read_csv(open_file)
 print df
 
 #check averages and statistical significance
@@ -132,12 +149,11 @@ set title and major labels
 '''  
 
 #add title 
-title = fig.suptitle('Defense Ratings for Winning and Losing Teams in NBA Finals', 
-          color=text_color, size=20, y=1.218, x=0.5) 
+title = fig.suptitle(title_text, color=text_color, size=20, y=1.218, x=0.5) 
       
 #add major y label
 labelsize = 15          
-ax1.set_ylabel('Defense Ratings', color=text_color, size=labelsize, y=0.66)
+ax1.set_ylabel(ylabel_text, color=text_color, size=labelsize, y=0.66)
 ax1.tick_params(axis='y', which='both', pad=-3)
 
 #add major x labels
@@ -189,7 +205,7 @@ print results
 '''
 
 plt.tight_layout()
-plt.savefig('nba_defense.jpg', dpi=55,
+plt.savefig(save_as_image, dpi=55,
             bbox_inches='tight', bbox_extra_artist=[title]) 
 plt.show()
 

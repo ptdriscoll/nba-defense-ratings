@@ -24,3 +24,7 @@ The visualization can be run with plot.py, as long as ratings.csv is in the data
 1. scrape_finals.py - this grabs winners, losers and number of games played in last 20 NBA Finals
 2. scrape_ratings.py - this retrieves NBA defense ratings for each team in the last 20 Finals Series
 3. plot.py - this plots winners and losers rankings overall and in a yearly timeline
+
+### Run offense ratings instead 
+
+Setting get_offense_instead = True at the top of scrape_ratings.py will scrape and separately save offense ratings. Setting the same variable to true at the top of plot.py will graph and separately save an offense-ratings image. The results are nearly identical to a mirror version of the defense ratings.  

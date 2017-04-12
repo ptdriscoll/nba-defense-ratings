@@ -12,8 +12,17 @@ import socket
 import json
 import time
 
-#Basic link settings to get defense ratings (set to most recent year)
+#option to get offense ratings isntead
+get_offense_instead = False
+
+#Basic settings to get defense ratings (set to most recent year) and save to csv
 url = 'http://stats.nba.com/stats/leaguedashteamstats?Conference=&DateFrom=&DateTo=&Division=&GameScope=&GameSegment=&LastNGames=7&LeagueID=00&Location=&MeasureType=Defense&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2015-16&SeasonSegment=&SeasonType=Playoffs&ShotClockRange=&StarterBench=&TeamID=0&VsConference=&VsDivision='
+save_to_file = 'data/ratings.csv'
+
+#option to get and save offense ratings instead
+if get_offense_instead:
+    url = 'http://stats.nba.com/stats/leaguedashteamstats?Conference=&DateFrom=&DateTo=&Division=&GameScope=&GameSegment=&LastNGames=7&LeagueID=00&Location=&MeasureType=Advanced&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2015-16&SeasonSegment=&SeasonType=Playoffs&ShotClockRange=&StarterBench=&TeamID=0&VsConference=&VsDivision='
+    save_to_file = 'data/ratings-offense.csv'
  
 #set headers
 headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.107 Safari/537.36','Upgrade-Insecure-Requests': '1','x-runtime': '148ms'}
@@ -22,13 +31,13 @@ headers = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 
 df = pd.read_csv('data/finals.csv')
 print '\n', df.head() 
 
-#empty lists to store winner and loser defense ratings
+#empty lists to store winner and loser ratings
 ratings_winners = []
 ratings_losers = []
 
 print ''
 
-#loop through dataframe and get defense ratings for winners and losers
+#loop through dataframe and get ratings for winners and losers
 for index, row in df.iterrows():
     year = row.years
     winner = row.winners
@@ -82,14 +91,14 @@ for index, row in df.iterrows():
 
 print '\n',len(ratings_winners), len(ratings_losers)
 
-#add defense ratings lists to dataframe
+#add ratings lists to dataframe
 se_ratings_winners = pd.Series(ratings_winners)
 se_ratings_losers = pd.Series(ratings_losers)
 df['ratings_winners'] = se_ratings_winners.values
 df['ratings_losers'] = se_ratings_losers.values
 
 print '\n',df
-df.to_csv('data/ratings.csv', index=False, encoding='utf-8')
+df.to_csv(save_to_file, index=False, encoding='utf-8')
 
 
 
